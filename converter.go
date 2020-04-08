@@ -24,6 +24,10 @@ type (
 	Pound  float64
 	Km     float64
 	Mile   float64
+	Stone  float64
+	Cal    float64
+	Joule  float64
+	Newton float64
 )
 
 //CentToFeet Coverter
@@ -110,23 +114,64 @@ func (conv Converter) KmToMile(km Km) Mile {
 	return res
 }
 
+//KgToStone Converter
+func (conv Converter) KgToStone(kg Kg) Stone {
+	var res = Stone(kg * 6.35029)
+	return res
+}
+
+//StoneToKg Converter
+func (conv Converter) StoneToKg(stone Stone) Kg {
+	var res = Kg(stone / 6.35029)
+	return res
+}
+
+//CalToJoule Converter
+func (conv Converter) CalToJoule(cal Cal) Joule {
+	var res = Joule(cal * 4.186)
+	return res
+}
+
+//JouleToCal Converter
+func (conv Converter) JouleToCal(joule Joule) Cal {
+	var res = Cal(joule / 4.186)
+	return res
+}
+
+//Pounds to Newton Converter
+func (conv Converter) PoundToNewton(pound Pound) Newton {
+	var res = Newton(pound * 4.448)
+	return res
+}
+
+//Newton To Pounds Converter
+func (conv Converter) NewtonToPound(newton Newton) Pound {
+	var res = Pound(newton / 4.448)
+	return res
+}
+
 func main() {
 	conv := Converter{}
-	fmt.Println(conv.CentToFeet(100))
-	fmt.Println(conv.FeetToCent(100))
-	fmt.Println(conv.MinToSec(100))
-	fmt.Println(conv.SecToMin(100))
-	fmt.Println(conv.SecToMilSec(100))
-	fmt.Println(conv.MilSecToSec(100))
-	fmt.Println(conv.SecToMilSec(100))
-	fmt.Println(conv.MilSecToSec(100))
-	fmt.Println(conv.CelToFah(100))
-	fmt.Println(conv.FahToCel(100))
-	fmt.Println(conv.RadToDeg(100))
-	fmt.Println(conv.DegToRad(100))
-	fmt.Println(conv.KgToPound(100))
-	fmt.Println(conv.PoundToKg(100))
-	fmt.Println(conv.MileToKm(100))
-	fmt.Println(conv.KmToMile(100))
-
+	fmt.Println(conv.CentToFeet(10))
+	fmt.Println(conv.FeetToCent(10))
+	fmt.Println(conv.MinToSec(10))
+	fmt.Println(conv.SecToMin(10))
+	fmt.Println(conv.SecToMilSec(10))
+	fmt.Println(conv.MilSecToSec(10))
+	fmt.Println(conv.SecToMilSec(10))
+	fmt.Println(conv.MilSecToSec(10))
+	fmt.Println(conv.CelToFah(10))
+	fmt.Println(conv.FahToCel(10))
+	fmt.Println(conv.RadToDeg(10))
+	fmt.Println(conv.DegToRad(10))
+	fmt.Println(conv.KgToPound(10))
+	fmt.Println(conv.PoundToKg(10))
+	fmt.Println(conv.MileToKm(10))
+	fmt.Println(conv.KmToMile(10))
+	fmt.Println(conv.KgToStone(10))
+	fmt.Println(conv.StoneToKg(10))
+	fmt.Println(conv.CalToJoule(10))
+	fmt.Println(conv.JouleToCal(10))
+	fmt.Println(conv.PoundToNewton(10))
+	fmt.Println(conv.NewtonToPound(10))
 }
